@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/22 18:21:30 by mmitrovi          #+#    #+#             */
-/*   Updated: 2026/09/22 18:28:42 by mmitrovi         ###   ########.fr       */
+/*   Created: 2026/09/22 18:50:13 by mmitrovi          #+#    #+#             */
+/*   Updated: 2026/09/22 18:56:36 by mmitrovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_is_negative(int n)
+void	ft_swap(int *a, int *b)
 {
-	if (n < 0)
-		write(1, "N", 1);
-	else
-		write(1, "P", 1);
-}
+	int	tmp;
 
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
 /*
-int main (void)
+int	main (void)
 {
-	ft_is_negative(-5);
-	ft_is_negative(5);
-	ft_is_negative(0);
-	return (0);
+	int a = 5;
+	int b = 6;
+	if (a == 6 && b == 5)
+		write(1, "ok", 2);
+	else
+		write(1, "no", 2);
+	ft_swap(&a, &b);
+
+	if (a == 6 && b == 5)
+		write(1, "ok", 2);
+	else
+		write(1, "no", 2);
+	return 0;
 }*/

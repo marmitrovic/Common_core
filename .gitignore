@@ -1,0 +1,10 @@
+*.o
+*.a
+*.so
+*.gch
+a.out
+.vscode/
+.DS_Store
+*.swp
+*.swo
+*~
