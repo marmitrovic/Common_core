@@ -6,24 +6,20 @@
 /*   By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 11:49:00 by mmitrovi          #+#    #+#             */
-/*   Updated: 2026/09/23 11:49:21 by mmitrovi         ###   ########.fr       */
+/*   Updated: 2026/09/23 21:33:25 by mmitrovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
-	while (*str)
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		write(1, str, 1);
-		str++;
+		ft_putchar(str[i]);
+		i++;
 	}
 }
-
-/*
-int	main (void)
-{
-	ft_putstr("Marko");
-	return (0);
-}*/

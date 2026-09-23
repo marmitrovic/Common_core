@@ -6,17 +6,23 @@
 /*   By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 12:25:28 by mmitrovi          #+#    #+#             */
-/*   Updated: 2026/09/23 12:34:41 by mmitrovi         ###   ########.fr       */
+/*   Updated: 2026/09/23 21:24:51 by mmitrovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
-	while (*str)
-		write(1, str++, 1);
-	write(1, "\n", 1);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	ft_putchar('\n');
 }
 
 int	ft_strcmp(char *s1, char *s2)

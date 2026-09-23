@@ -6,7 +6,7 @@
 /*   By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 17:51:21 by mmitrovi          #+#    #+#             */
-/*   Updated: 2026/09/23 19:21:09 by mmitrovi         ###   ########.fr       */
+/*   Updated: 2026/09/23 21:26:43 by mmitrovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	ft_display_file(char *filename)
 	close(fd);
 }
 
-/*
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
@@ -61,4 +60,3 @@ int	main(int argc, char **argv)
 		ft_display_file(argv[1]);
 	return (0);
 }
-*/

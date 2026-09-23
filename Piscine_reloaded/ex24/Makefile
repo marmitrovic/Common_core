@@ -6,31 +6,35 @@
 #    By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/23 15:59:23 by mmitrovi          #+#    #+#              #
-#    Updated: 2026/09/23 16:06:43 by mmitrovi         ###   ########.fr        #
+#    Updated: 2026/09/23 21:25:29 by mmitrovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -Iincludes
+
+AR = ar
+ARFLAGS = rcs
+
 NAME = libft.a
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+SRC_DIR = srcs/
 
-HEADERS = ./includes/%.h
-SRC=srcs
-SOURCE	=	./srcs/ft_putchar.c \
-			./srcs/ft_putstr.c \
-			./srcs/ft_strcmp.c \
-			./srcs/ft_strlen.c \
-			./srcs/ft_swap.c 
+SRCS = $(SRC_DIR)ft_putchar.c \
+       $(SRC_DIR)ft_putstr.c \
+       $(SRC_DIR)ft_strcmp.c \
+       $(SRC_DIR)ft_strlen.c \
+       $(SRC_DIR)ft_swap.c
 
+OBJS = $(SRCS:.c=.o)
 
-OBJS = $((directory where source):.c=.o)
+all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@ 
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
