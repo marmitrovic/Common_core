@@ -6,7 +6,7 @@
 #    By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/24 10:57:02 by mmitrovi          #+#    #+#              #
-#    Updated: 2026/09/24 10:57:03 by mmitrovi         ###   ########.fr        #
+#    Updated: 2026/09/24 13:19:21 by mmitrovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ ft_memcmp.c \
 ft_strnstr.c \
 ft_atoi.c \
 ft_calloc.c \
+ft_strdup.c \
 ft_substr.c \
 ft_strjoin.c \
 ft_strtrim.c \

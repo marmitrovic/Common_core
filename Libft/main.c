@@ -6,7 +6,7 @@
 /*   By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 10:56:54 by mmitrovi          #+#    #+#             */
-/*   Updated: 2026/09/24 10:56:55 by mmitrovi         ###   ########.fr       */
+/*   Updated: 2026/09/24 13:27:15 by mmitrovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,15 @@
 
 int	main(void)
 {
-	printf("%i", ft_strlen("Hello World"));
+	char	**result;
+	int		i;
+
+	result = ft_split("hello 42 madrid", ' ');
+	i = 0;
+	while (result[i])
+	{
+		printf("Reč %d: %s\n", i, result[i]);
+		i++;
+	}
+	return (0);
 }
