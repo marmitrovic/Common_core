@@ -6,7 +6,7 @@
 /*   By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 10:56:12 by mmitrovi          #+#    #+#             */
-/*   Updated: 2026/09/24 10:56:13 by mmitrovi         ###   ########.fr       */
+/*   Updated: 2026/09/24 14:19:45 by mmitrovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		i++;
 		if (s[i] == letter)
 			last = (char *)&s[i];
+		i++;
 	}
 	if (s[i] == letter)
 		last = (char *)&s[i];
