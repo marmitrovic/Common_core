@@ -6,7 +6,7 @@
 /*   By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 18:49:01 by marko             #+#    #+#             */
-/*   Updated: 2026/09/24 09:14:04 by mmitrovi         ###   ########.fr       */
+/*   Updated: 2026/09/24 09:39:58 by mmitrovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ char	*ft_itoa(int n)
 	len = get_len(num);
 	str = malloc ((len + 1) * sizeof(char));
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 	str[len] = '\0';
 	if (num == 0)
 		str[0] = '0';
@@ -56,7 +54,6 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-
 /*
 
 int main()
