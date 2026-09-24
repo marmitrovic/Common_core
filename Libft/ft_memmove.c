@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/21 19:54:47 by marko             #+#    #+#             */
-/*   Updated: 2026/09/24 09:15:02 by mmitrovi         ###   ########.fr       */
+/*   Created: 2026/09/24 09:46:32 by mmitrovi          #+#    #+#             */
+/*   Updated: 2026/09/24 09:56:05 by mmitrovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,22 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 {
 	unsigned char	*ptrd;
 	unsigned char	*ptrs;
-	size_t			i;
 
 	ptrd = (unsigned char *)dest;
 	ptrs = (unsigned char *)src;
 	if (dest == NULL || src == NULL)
-		return (0);
-	i = 0;
-	if (dest < src)
+		return (NULL);
+	if (ptrd < ptrs)
 	{
-		while (i < len)
-		{
-			ptrd[i] = ptrs[i];
-			i++;
-		}
+		while (len--)
+			*ptrd++ = *ptrs++;
 	}
 	else
 	{
-		while (len > 0)
+		while (len)
 		{
-			len--;
 			ptrd[len] = ptrs[len];
+			len--;
 		}
 	}
 	return (dest);
