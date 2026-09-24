@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marko <emarkomitrovic@gmail.com>           +#+  +:+       +#+        */
+/*   By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 20:03:47 by marko             #+#    #+#             */
-/*   Updated: 2026/08/21 20:05:19 by marko            ###   ########.fr       */
+/*   Updated: 2026/09/24 09:22:13 by mmitrovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	count_words(char const *s, char c)
 
 	count = 0;
 	in_word = 0;
-	while(*s)
+	while (*s)
 	{
 		if (*s != c && in_word == 0)
 		{
@@ -35,29 +35,27 @@ static int	count_words(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-
 	char	**tab;
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 
 	if (s == NULL)
 		return (NULL);
-	tab = malloc((count_words(s, c) + 1) *sizeof(char *));
-	if(tab == NULL)
-		return(NULL);
+	tab = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (tab == NULL)
+		return (NULL);
 	i = 0;
 	while (s[0] != '\0')
 	{
-		while(s[0] != '\0' && s[0] == c)
+		while (s[0] != '\0' && s[0] == c)
 			s++;
-		if(s[0] != '\0')
+		if (s[0] != '\0')
 		{
 			len = 0;
 			while (s[len] != '\0' && s[len] != c)
-			len++;
+				len++;
 			tab[i] = ft_substr(s, 0, len);
 			i++;
-
 			s = s + len;
 		}
 	}
@@ -96,12 +94,4 @@ int main()
 	return (0);
 
 }
-
-
-
 */
-
-
-
-
-
