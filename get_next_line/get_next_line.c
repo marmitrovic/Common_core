@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marko <emarkomitrovic@gmail.com>           +#+  +:+       +#+        */
+/*   By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/28 14:39:29 by marko             #+#    #+#             */
-/*   Updated: 2026/09/08 18:26:28 by marko            ###   ########.fr       */
+/*   Created: 2026/09/25 09:57:49 by mmitrovi          #+#    #+#             */
+/*   Updated: 2026/09/25 09:59:23 by mmitrovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ We assumebytes_to_read to be 1 at start, but later we assign BUFFER_SIZE to it.
 Then, using the same read function, we append data from the fd into the buffer container.
 */
 
-char *extract_line(char *stash)
+char	*extract_line(char *stash)
 {
 	int	i = 0;
 	int	len = 0;
