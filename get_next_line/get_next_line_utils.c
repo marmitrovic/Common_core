@@ -6,7 +6,7 @@
 /*   By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 09:57:41 by mmitrovi          #+#    #+#             */
-/*   Updated: 2026/09/25 09:57:43 by mmitrovi         ###   ########.fr       */
+/*   Updated: 2026/09/25 12:24:45 by mmitrovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strchr(char *s, int c)
 {
 	int	i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
 	{
@@ -51,7 +53,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	if(!s2)
 		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	new_str = malloc((len) * sizeof( char));
+	new_str = malloc((len) * sizeof(char));
 	if(!new_str)
 		return (NULL);
 	i = 0;

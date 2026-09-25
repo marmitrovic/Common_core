@@ -6,13 +6,13 @@
 /*   By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 09:57:49 by mmitrovi          #+#    #+#             */
-/*   Updated: 2026/09/25 11:02:23 by mmitrovi         ###   ########.fr       */
+/*   Updated: 2026/09/25 12:16:48 by mmitrovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*read_to_stash(fd, stash)
+char	*read_to_stash(int fd,char *stash)
 {
 	char *buffer;
 	ssize_t bytes_read; //signed size type can be negative number
@@ -27,6 +27,7 @@ char	*read_to_stash(fd, stash)
 		if (bytes_read == -1)
 			{
 				free(buffer);
+				free(stash);
 				return (NULL);
 			}
 		buffer[bytes_read] = '\0';
@@ -132,6 +133,12 @@ char	*get_next_line(int fd)
 	if (!stash)
 		return (NULL);
 	line = extract_line(stash);
+	if (!line || !line[0])
+	{
+		free(stash);
+		stash = NULL;
+		return (NULL);
+	}
 	stash = clean_stash(stash);
 	return (line);
 }
