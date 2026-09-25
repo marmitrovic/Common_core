@@ -6,7 +6,7 @@
 /*   By: mmitrovi <mmitrovi@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 09:57:49 by mmitrovi          #+#    #+#             */
-/*   Updated: 2026/09/25 09:59:23 by mmitrovi         ###   ########.fr       */
+/*   Updated: 2026/09/25 11:02:23 by mmitrovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,46 @@ char	*extract_line(char *stash)
 	withouth an if statement, while always adding 1 extra byte for the null-terminator \0
 
 */
+
+char *clean_stash(char *stash)
+{
+	char	*new_memory;
+	int		len;
+	int		j;
+	int		i;
+	
+	if(!stash)
+		return(NULL);
+	i = 0;
+	while (stash[i] &&stash[i] != '\n')
+		i++;
+	if (stash[i] == '\0')
+		{
+			free(stash);
+			return (NULL);
+		}
+	i++;
+	len = ft_strlen(stash) - i;
+	j = 0;
+	new_memory = malloc((len + 1) * sizeof(char));
+	if (!new_memory)
+	{
+		free(stash);
+		return(NULL);
+	}
+	while (stash[i] != '\0')
+	{
+		new_memory[j] = stash[i];
+			i++;
+			j++;
+	}
+	new_memory[j] = '\0';
+	free(stash);
+	return(new_memory);
+}
+
+
+
 
 char	*get_next_line(int fd)
 {
